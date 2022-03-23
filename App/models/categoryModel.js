@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var categorySchema = new Schema({
-    userId: { type: mongoose.Types.ObjectId, ref: "users"},
+    // userId: { type: mongoose.Types.ObjectId, ref: "users"},
     categoryName: { type: String, trim: true },
     isDeleted: { type: Boolean, default: false },
     isEnabled: { type: Boolean, default: true }

@@ -18,8 +18,8 @@ app.use(express.json());
 // app.use(bodyParser);
 
 app.use('/api/user',userRouter);
-app.use('/api/category',categoryRouter);
-app.use('/api/product',productRouter);
+app.use('/api',categoryRouter);
+app.use('/api',productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

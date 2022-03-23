@@ -4,12 +4,13 @@ var categoryModel = require('../models/categoryModel');
 
 // 1. create category
 const addCategory = async(req, res) => {
-    body("userId").exists();
     body("categoryName").exists();
-    let dt = req.body;
+    const {categoryName} = req.body;
+    if(!categoryName ){
+      res.status(400).send({status:400, message:"All fields are required?"})
+  }
     let postData = {
-        userId:dt.userId,
-        categoryName: dt.categoryName,
+        categoryName: req.body.categoryName,
     };
     var data = await categoryModel(postData).save();
     if (data) {
@@ -48,9 +49,8 @@ const addCategory = async(req, res) => {
 
 // 2. Get Category
 const getCategory = (req, res) => {
-    var userId = req.body.userId;
     categoryModel
-      .find({ userId: mongoose.Types.ObjectId(userId), isDeleted: false })
+      .find({ isDeleted: false })
       .lean()
       .exec((err, data) => {
         if (err) {

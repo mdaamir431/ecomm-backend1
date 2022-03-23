@@ -5,6 +5,10 @@ const { body } = require('express-validator');
 const addProduct = async(req, res) => {
     body("categoryId").exists();
     body("productsName").exists();
+    const {categoryId , productsName} = req.body;
+    if(!categoryId || !productsName){
+      res.status(400).send({status:400, message:"All fields are required?"})
+  }
     let dt = req.body;
     let postData = {
         categoryId:dt.categoryId,
