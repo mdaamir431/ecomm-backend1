@@ -16,6 +16,6 @@ var categorySchema = new Schema({
     categoryName: { type: String, trim: true },
     isDeleted: { type: Boolean, default: false },
     isEnabled: { type: Boolean, default: true }
-}, { timestamps: true }, { collection: "categoryData" });
+}, { timestamps: true }, { collection: "category" });
 
-module.exports = mongoose.model("categoryData", categorySchema);
+module.exports = mongoose.model("category", categorySchema);
