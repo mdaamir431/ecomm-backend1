@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/ecomm-server", {
+mongoose.connect("mongodb+srv://mohitakki:K8kyl8wsitfSS28x@cluster0.pdsrd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     useNewUrlParser:true,
     useUnifiedTopology:true
 
