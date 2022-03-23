@@ -1,0 +1,15 @@
+
+var app = require('../index');
+// var app= express();
+const port = process.env.PORT || 2000;
+
+app.get('/',(req,res)=>{
+res.send('Ecomm-Server is working');
+});
+
+app.get('/ap',(req,res)=>{
+res.send('second router is also working')
+});
+app.listen(port,()=>{
+console.log(`ecomm-server is listening on port http://localhost:${port}`)
+});
